@@ -1,0 +1,6 @@
+#! /usr/bin/env sh
+. /etc/mattermost-i2p/mattermost.conf
+chromium --incognito \
+  --proxy-server="127.0.0.1:0" \
+  --proxy-bypass-list=$MMC_HOST:$MMC_PORT \
+  $MMC_HOST:$MMC_PORT

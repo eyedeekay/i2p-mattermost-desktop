@@ -1,0 +1,6 @@
+#! /usr/bin/env sh
+. /etc/mattermost-i2p/mattermost.conf
+http_proxy="http://127.0.0.1:4444"
+https_proxy="http://127.0.0.1:4444"
+no_proxy=http://$MMC_HOST:$MMC_PORT
+/opt/Mattermost/mattermost-desktop
