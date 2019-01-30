@@ -4,7 +4,7 @@
 chromium-mattermost-i2p:
 	mkdir -p usr/bin
 	@echo "#! /usr/bin/env sh" | tee usr/bin/mattermost-chromium
-	@echo '. /etc/mattermost-i2p/mattermost.conf' | tee -a usr/bin/mattermost-chromium
+	@echo '. /etc/mattermost-i2p/mattermost-i2p.conf' | tee -a usr/bin/mattermost-chromium
 	@echo 'chromium --incognito \' | tee -a usr/bin/mattermost-chromium
 	@echo '  --proxy-server="127.0.0.1:0" \' | tee -a usr/bin/mattermost-chromium
 	@echo "  --proxy-bypass-list=\$$MMC_HOST:\$$MMC_PORT \\" | tee -a usr/bin/mattermost-chromium
@@ -18,7 +18,7 @@ chromium-test:
 
 firefox-mattermost-i2p:
 	@echo "#! /usr/bin/env sh" | tee usr/bin/mattermost-firefox
-	@echo '. /etc/mattermost-i2p/mattermost.conf' | tee -a usr/bin/mattermost-firefox
+	@echo '. /etc/mattermost-i2p/mattermost-i2p.conf' | tee -a usr/bin/mattermost-firefox
 	@echo "if [ -1 ~/.mozilla/firefox/mattermost.i2p ]; then" | tee -a usr/bin/mattermost-firefox
 	@echo "  cp -rv /usr/lib/mattermost.profile.i2p ~/.mozilla/firefox/mattermost.i2p" | tee -a usr/bin/mattermost-firefox
 	@echo "fi" | tee -a usr/bin/mattermost-firefox
@@ -48,7 +48,7 @@ mattermost:
 desktop-mattermost-i2p:
 	mkdir -p usr/bin
 	@echo "#! /usr/bin/env sh" | tee usr/bin/mattermost-i2p
-	@echo '. /etc/mattermost-i2p/mattermost.conf' | tee -a usr/bin/mattermost-i2p
+	@echo '. /etc/mattermost-i2p/mattermost-i2p.conf' | tee -a usr/bin/mattermost-i2p
 	@echo 'export http_proxy="http://127.0.0.1:4444"' | tee -a usr/bin/mattermost-i2p
 	@echo 'export https_proxy="http://127.0.0.1:4444"' | tee -a usr/bin/mattermost-i2p
 	@echo "export no_proxy=http://\$$MMC_HOST:\$$MMC_PORT" | tee -a usr/bin/mattermost-i2p

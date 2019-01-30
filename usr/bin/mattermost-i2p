@@ -1,5 +1,5 @@
 #! /usr/bin/env sh
-. /etc/mattermost-i2p/mattermost.conf
+. /etc/mattermost-i2p/mattermost-i2p.conf
 export http_proxy="http://127.0.0.1:4444"
 export https_proxy="http://127.0.0.1:4444"
 export no_proxy=http://$MMC_HOST:$MMC_PORT

@@ -1,5 +1,5 @@
 #! /usr/bin/env sh
-. /etc/mattermost-i2p/mattermost.conf
+. /etc/mattermost-i2p/mattermost-i2p.conf
 if [ -1 ~/.mozilla/firefox/mattermost.i2p ]; then
   cp -rv /usr/lib/mattermost.profile.i2p ~/.mozilla/firefox/mattermost.i2p
 fi
