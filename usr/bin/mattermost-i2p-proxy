@@ -1,4 +1,4 @@
 #! /usr/bin/env sh
-http_proxy="http://127.0.0.1:4444"
-https_proxy="http://127.0.0.1:4444"
+export http_proxy="http://127.0.0.1:4444"
+export https_proxy="http://127.0.0.1:4444"
 /opt/Mattermost/mattermost-desktop

@@ -55,8 +55,8 @@ echo:
 	@echo "destination = $(MATTERMOST_DESTINATION).b32.i2p" | tee -a etc/i2pd/tunnels.conf.d/mattermost.conf
 	@echo 'destinationport = 8065' | tee -a etc/i2pd/tunnels.conf.d/mattermost.conf
 	@echo 'keys = mm-keys.dat' | tee -a etc/i2pd/tunnels.conf.d/mattermost.conf
-	@echo "MMC_HOST=$MMC_HOST" | tee etc/mattermost-i2p/mattermost-i2p.conf
-	@echo "MMC_PORT=$MMC_PORT" | tee -a etc/mattermost-i2p/mattermost-i2p.conf
+	@echo "MMC_HOST=$(MMC_HOST)" | tee etc/mattermost-i2p/mattermost-i2p.conf
+	@echo "MMC_PORT=$(MMC_PORT)" | tee -a etc/mattermost-i2p/mattermost-i2p.conf
 
 clean:
 	rm -fr firefox.profile.mattermost.test
