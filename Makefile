@@ -43,7 +43,7 @@ etc/privoxy/i2p-config:
 	echo 'forward .i2p 127.0.0.1:4444' | tee -a etc/privoxy/i2p-config
 
 #include ../local_conf.mk
-include ../test_conf.mk
+include config.mk
 
 include launchers.mk
 include ircbridge.mk
