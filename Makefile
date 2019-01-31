@@ -7,14 +7,14 @@ MMC_PORT=8065
 PROXY_PORT=4444
 #PROXY_PORT=8118
 
-PREFIX := /
-VAR := var/
-RUN := run/
-LIB := lib/
-LOG := log/
-ETC := etc/
-USR := usr/
-LOCAL := local/
+PREFIX ?= /
+VAR ?= var/
+RUN ?= run/
+LIB ?= lib/
+LOG ?= log/
+ETC ?= etc/
+USR ?= usr/
+LOCAL ?= local/
 
 
 echo:

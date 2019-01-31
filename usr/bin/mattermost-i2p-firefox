@@ -1,6 +1,6 @@
 #! /usr/bin/env sh
 . /etc/mattermost-i2p/mattermost-i2p.conf
 if [ ! -d ~/.mozilla/firefox/mattermost.i2p ]; then
-  cp -rv /usr/lib/mattermost.profile.i2p ~/.mozilla/firefox/mattermost.i2p
+  cp -rv /usr/local//lib/mattermost.profile.i2p ~/.mozilla/firefox/mattermost.i2p
 fi
 firefox --no-remote --profile ~/.mozilla/firefox/mattermost.i2p $MMC_HOST:$MMC_PORT
