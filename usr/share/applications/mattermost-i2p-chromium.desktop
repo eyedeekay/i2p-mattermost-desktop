@@ -2,7 +2,7 @@
 [Desktop Entry]
 Exec=mattermost-chromium %u
 Type=Application
-Icon=chromium
+Icon=chromium-browser
 Name=I2P Mattermost(Chromium)
 GenericName=I2P Mattermost(Chromium)
 Comment=I2P Mattermost(Chromium)

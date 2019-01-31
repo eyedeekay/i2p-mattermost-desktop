@@ -2,7 +2,7 @@
 [Desktop Entry]
 Exec=mattermost-firefox %u
 Type=Application
-Icon=firefox-esr
+Icon=firefox
 Name=I2P Mattermost(Firefox)
 GenericName=I2P Mattermost(Firefox)
 Comment=I2P Mattermost(Firefox)
