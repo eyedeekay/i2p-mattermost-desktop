@@ -18,7 +18,7 @@ LOCAL := local/
 
 
 echo:
-	mkdir -p etc/i2pd/tunnels.d/ etc/mattermost-i2p etc/privoxy
+	mkdir -p etc/i2pd/tunnels.d/ etc/mattermost-i2p
 	@echo '[MatterMost]' | tee etc/i2pd/tunnels.d/mattermost.conf
 	@echo 'type = client' | tee -a etc/i2pd/tunnels.d/mattermost.conf
 	@echo 'address = 127.0.0.1' | tee -a etc/i2pd/tunnels.d/mattermost.conf
@@ -38,7 +38,6 @@ echo:
 	@echo "PROXY_PORT=$(PROXY_PORT)" | tee -a etc/mattermost-i2p/mattermost-i2p.conf
 
 include config.mk
-
 include launchers.mk
 include ircbridge.mk
 include test.mk
@@ -51,8 +50,8 @@ install:
 		$(PREFIX)$(USR)$(LOCAL)/lib/mattermost.profile.i2p/ $(PREFIX)$(USR)$(LOCAL)/share/applications $(PREFIX)$(USR)$(LOCAL)/share/doc/assets/
 	install -m755 usr/bin/mattermost-i2p $(PREFIX)$(USR)$(LOCAL)/bin/
 	install -m755 usr/bin/mattermost-i2p-proxy $(PREFIX)$(USR)$(LOCAL)/bin/
-	install -m755 usr/bin/mattermost-chromium $(PREFIX)$(USR)$(LOCAL)/bin/
-	install -m755 usr/bin/mattermost-firefox $(PREFIX)$(USR)$(LOCAL)/bin/
+	install -m755 usr/bin/mattermost-i2p-chromium $(PREFIX)$(USR)$(LOCAL)/bin/
+	install -m755 usr/bin/mattermost-i2p-firefox $(PREFIX)$(USR)$(LOCAL)/bin/
 	install etc/mattermost-i2p/mattermost-i2p.conf $(PREFIX)$(ETC)/mattermost-i2p/
 	install etc/i2pd/tunnels.d/mattermost.conf $(PREFIX)$(ETC)/i2pd/tunnels.d/
 	install usr/lib/mattermost.profile.i2p/user.js $(PREFIX)$(USR)$(LOCAL)/lib/mattermost.profile.i2p/
@@ -66,8 +65,8 @@ install:
 uninstall:
 	rm $(PREFIX)$(USR)$(LOCAL)/bin/mattermost-i2p
 	rm $(PREFIX)$(USR)$(LOCAL)/bin/mattermost-i2p-proxy
-	rm $(PREFIX)$(USR)$(LOCAL)/bin/mattermost-chromium
-	rm $(PREFIX)$(USR)$(LOCAL)/bin/mattermost-firefox
+	rm $(PREFIX)$(USR)$(LOCAL)/bin/mattermost-i2p-chromium
+	rm $(PREFIX)$(USR)$(LOCAL)/bin/mattermost-i2p-firefox
 	rm $(PREFIX)$(ETC)/mattermost-i2p/mattermost-i2p.conf
 	rm $(PREFIX)$(ETC)/i2pd/tunnels.d/mattermost.conf
 	rm $(PREFIX)$(USR)$(LOCAL)/lib/mattermost.profile.i2p/user.js

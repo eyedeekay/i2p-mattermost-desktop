@@ -1,6 +1,6 @@
 
 [Desktop Entry]
-Exec=mattermost-firefox %u
+Exec=mattermost-i2p-firefox %u
 Type=Application
 Icon=firefox
 Name=I2P Mattermost(Firefox)
