@@ -63,19 +63,19 @@ install:
 	cp usr/share/doc/assets/*.png $(PREFIX)$(USR)$(LOCAL)/share/doc/assets
 
 uninstall:
-	rm $(PREFIX)$(USR)$(LOCAL)/bin/mattermost-i2p
-	rm $(PREFIX)$(USR)$(LOCAL)/bin/mattermost-i2p-proxy
-	rm $(PREFIX)$(USR)$(LOCAL)/bin/mattermost-i2p-chromium
-	rm $(PREFIX)$(USR)$(LOCAL)/bin/mattermost-i2p-firefox
-	rm $(PREFIX)$(ETC)/mattermost-i2p/mattermost-i2p.conf
-	rm $(PREFIX)$(ETC)/i2pd/tunnels.d/mattermost.conf
-	rm $(PREFIX)$(USR)$(LOCAL)/lib/mattermost.profile.i2p/user.js
-	rm $(PREFIX)$(USR)$(LOCAL)/lib/mattermost.profile.i2p/bookmarks.html
-	rm $(PREFIX)$(USR)$(LOCAL)/share/applications/mattermost-i2p.desktop
-	rm $(PREFIX)$(USR)$(LOCAL)/share/applications/mattermost-i2p-proxy.desktop
-	rm $(PREFIX)$(USR)$(LOCAL)/share/applications/mattermost-i2p-chromium.desktop
-	rm $(PREFIX)$(USR)$(LOCAL)/share/applications/mattermost-i2p-firefox.desktop
-	rm $(PREFIX)$(USR)$(LOCAL)/share/doc/assets/*.png
+	rm -f $(PREFIX)$(USR)$(LOCAL)/bin/mattermost-i2p \
+		$(PREFIX)$(USR)$(LOCAL)/bin/mattermost-i2p-proxy \
+		$(PREFIX)$(USR)$(LOCAL)/bin/mattermost-i2p-chromium \
+		$(PREFIX)$(USR)$(LOCAL)/bin/mattermost-i2p-firefox \
+		$(PREFIX)$(ETC)/mattermost-i2p/mattermost-i2p.conf \
+		$(PREFIX)$(ETC)/i2pd/tunnels.d/mattermost.conf \
+		$(PREFIX)$(USR)$(LOCAL)/lib/mattermost.profile.i2p/user.js \
+		$(PREFIX)$(USR)$(LOCAL)/lib/mattermost.profile.i2p/bookmarks.html \
+		$(PREFIX)$(USR)$(LOCAL)/share/applications/mattermost-i2p.desktop \
+		$(PREFIX)$(USR)$(LOCAL)/share/applications/mattermost-i2p-proxy.desktop \
+		$(PREFIX)$(USR)$(LOCAL)/share/applications/mattermost-i2p-chromium.desktop \
+		$(PREFIX)$(USR)$(LOCAL)/share/applications/mattermost-i2p-firefox.desktop \
+		$(PREFIX)$(USR)$(LOCAL)/share/doc/assets/*.png
 
 ## Copyright (C) 2012 - 2018 ENCRYPTED SUPPORT LP <adrelanos@riseup.net>
 ## See the file COPYING for copying conditions.
