@@ -1,14 +1,13 @@
 # i2p-mattermost-desktop
 
 Notes about configuring a desktop client for Mattermost to reliably work with an
-i2p client tunnel. Currently WebSockets via Desktop are broken in this
-configuration because Mattermost needs to be contacted via WebSockets.
-Tentatively, the chromium-based one is most 'complete'
+i2p client tunnel. Mattermost Desktop works with i2p if you pass the proxy using
+the chromium-like flags --proxy-server --proxy-bypass-list.
 
 ## What is Mattermost Desktop
 
  * An electron app
-  * has browser-like characteristics, like making remote requests, potentially
+ * has browser-like characteristics, like making remote requests, potentially
    via scripts.
  * A browser app
  * a third-party .deb
