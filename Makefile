@@ -61,12 +61,42 @@ setup:
 ## master location:
 ## https://github.com/Whonix/genmkfile/blob/master/usr/share/genmkfile/Makefile
 
-GENMKFILE_PATH ?= /usr/share/genmkfile
-GENMKFILE_ROOT_DIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
+#GENMKFILE_PATH ?= /usr/share/genmkfile
+#GENMKFILE_ROOT_DIR := $(dir $(abspath $(lastword $(MAKEFILE_LIST))))
 
-export GENMKFILE_PATH
-export GENMKFILE_ROOT_DIR
+#export GENMKFILE_PATH
+#export GENMKFILE_ROOT_DIR
 
-include $(GENMKFILE_PATH)/makefile-full
+#include $(GENMKFILE_PATH)/makefile-full
 
+install:
+	mkdir -p $(PREFIX)$(ETC)/mattermost-i2p $(PREFIX)$(ETC)/i2pd/tunnels.conf.d/ \
+		$(PREFIX)$(USR)$(LOCAL)/lib/mattermost.profile.i2p/ $(PREFIX)$(USR)$(LOCAL)/share/applications $(PREFIX)$(USR)$(LOCAL)/share/doc/assets/
+	install -m755 usr/bin/mattermost-i2p $(PREFIX)$(USR)$(LOCAL)/bin/
+	install -m755 usr/bin/mattermost-i2p-proxy $(PREFIX)$(USR)$(LOCAL)/bin/
+	install -m755 usr/bin/mattermost-chromium $(PREFIX)$(USR)$(LOCAL)/bin/
+	install -m755 usr/bin/mattermost-firefox $(PREFIX)$(USR)$(LOCAL)/bin/
+	install etc/mattermost-i2p/mattermost-i2p.conf $(PREFIX)$(ETC)/mattermost-i2p/
+	install etc/i2pd/tunnels.conf.d/mattermost.conf $(PREFIX)$(ETC)/i2pd/tunnels.conf.d/
+	install usr/lib/mattermost.profile.i2p/user.js $(PREFIX)$(USR)$(LOCAL)/lib/mattermost.profile.i2p/
+	install usr/lib/mattermost.profile.i2p/bookmarks.html $(PREFIX)$(USR)$(LOCAL)/lib/mattermost.profile.i2p/
+	install usr/share/applications/mattermost-i2p.desktop $(PREFIX)$(USR)$(LOCAL)/share/applications
+	install usr/share/applications/mattermost-i2p-proxy.desktop $(PREFIX)$(USR)$(LOCAL)/share/applications
+	install usr/share/applications/mattermost-i2p-chromium.desktop $(PREFIX)$(USR)$(LOCAL)/share/applications
+	install usr/share/applications/mattermost-i2p-firefox.desktop $(PREFIX)$(USR)$(LOCAL)/share/applications
+	cp usr/share/doc/assets/*.png $(PREFIX)$(USR)$(LOCAL)/share/doc/assets
 
+uninstall:
+	rm $(PREFIX)$(USR)$(LOCAL)/bin/mattermost-i2p
+	rm $(PREFIX)$(USR)$(LOCAL)/bin/mattermost-i2p-proxy
+	rm $(PREFIX)$(USR)$(LOCAL)/bin/mattermost-chromium
+	rm $(PREFIX)$(USR)$(LOCAL)/bin/mattermost-firefox
+	rm $(PREFIX)$(ETC)/mattermost-i2p/mattermost-i2p.conf
+	rm $(PREFIX)$(ETC)/i2pd/tunnels.conf.d/mattermost.conf
+	rm $(PREFIX)$(USR)$(LOCAL)/lib/mattermost.profile.i2p/user.js
+	rm $(PREFIX)$(USR)$(LOCAL)/lib/mattermost.profile.i2p/bookmarks.html
+	rm $(PREFIX)$(USR)$(LOCAL)/share/applications/mattermost-i2p.desktop
+	rm $(PREFIX)$(USR)$(LOCAL)/share/applications/mattermost-i2p-proxy.desktop
+	rm $(PREFIX)$(USR)$(LOCAL)/share/applications/mattermost-i2p-chromium.desktop
+	rm $(PREFIX)$(USR)$(LOCAL)/share/applications/mattermost-i2p-firefox.desktop
+	rm $(PREFIX)$(USR)$(LOCAL)/share/doc/assets/*.png
