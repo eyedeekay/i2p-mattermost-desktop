@@ -16,6 +16,7 @@ ETC ?= etc/
 USR ?= usr/
 LOCAL ?= local/
 
+MATTERMOST_PROFILE=$(PREFIX)$(USR)$(LOCAL)/lib/mattermost.profile.i2p
 
 echo:
 	mkdir -p etc/i2pd/tunnels.d/ etc/mattermost-i2p
@@ -36,6 +37,7 @@ echo:
 	@echo "MMC_HOST=$(MMC_HOST)" | tee etc/mattermost-i2p/mattermost-i2p.conf
 	@echo "MMC_PORT=$(MMC_PORT)" | tee -a etc/mattermost-i2p/mattermost-i2p.conf
 	@echo "PROXY_PORT=$(PROXY_PORT)" | tee -a etc/mattermost-i2p/mattermost-i2p.conf
+	@echo "MATTERMOST_PROFILE=$(MATTERMOST_PROFILE)" | tee -a etc/mattermost-i2p/mattermost-i2p.conf
 
 include config.mk
 include launchers.mk
@@ -47,15 +49,15 @@ setup:
 
 install:
 	mkdir -p $(PREFIX)$(ETC)/mattermost-i2p $(PREFIX)$(ETC)/i2pd/tunnels.d/ \
-		$(PREFIX)$(USR)$(LOCAL)/lib/mattermost.profile.i2p/ $(PREFIX)$(USR)$(LOCAL)/share/applications $(PREFIX)$(USR)$(LOCAL)/share/doc/assets/
+		$(PREFIX)$(USR)$(LOCAL)/lib/$(MATTERMOST_PROFILE)/ $(PREFIX)$(USR)$(LOCAL)/share/applications $(PREFIX)$(USR)$(LOCAL)/share/doc/assets/
 	install -m755 usr/bin/mattermost-i2p $(PREFIX)$(USR)$(LOCAL)/bin/
 	install -m755 usr/bin/mattermost-i2p-proxy $(PREFIX)$(USR)$(LOCAL)/bin/
 	install -m755 usr/bin/mattermost-i2p-chromium $(PREFIX)$(USR)$(LOCAL)/bin/
 	install -m755 usr/bin/mattermost-i2p-firefox $(PREFIX)$(USR)$(LOCAL)/bin/
 	install etc/mattermost-i2p/mattermost-i2p.conf $(PREFIX)$(ETC)/mattermost-i2p/
 	install etc/i2pd/tunnels.d/mattermost.conf $(PREFIX)$(ETC)/i2pd/tunnels.d/
-	install usr/lib/mattermost.profile.i2p/user.js $(PREFIX)$(USR)$(LOCAL)/lib/mattermost.profile.i2p/
-	install usr/lib/mattermost.profile.i2p/bookmarks.html $(PREFIX)$(USR)$(LOCAL)/lib/mattermost.profile.i2p/
+	install usr/lib/$(MATTERMOST_PROFILE)/user.js $(PREFIX)$(USR)$(LOCAL)/lib/$(MATTERMOST_PROFILE)/
+	install usr/lib/$(MATTERMOST_PROFILE)/bookmarks.html $(PREFIX)$(USR)$(LOCAL)/lib/$(MATTERMOST_PROFILE)/
 	install usr/share/applications/mattermost-i2p.desktop $(PREFIX)$(USR)$(LOCAL)/share/applications
 	install usr/share/applications/mattermost-i2p-proxy.desktop $(PREFIX)$(USR)$(LOCAL)/share/applications
 	install usr/share/applications/mattermost-i2p-chromium.desktop $(PREFIX)$(USR)$(LOCAL)/share/applications
@@ -69,13 +71,16 @@ uninstall:
 		$(PREFIX)$(USR)$(LOCAL)/bin/mattermost-i2p-firefox \
 		$(PREFIX)$(ETC)/mattermost-i2p/mattermost-i2p.conf \
 		$(PREFIX)$(ETC)/i2pd/tunnels.d/mattermost.conf \
-		$(PREFIX)$(USR)$(LOCAL)/lib/mattermost.profile.i2p/user.js \
-		$(PREFIX)$(USR)$(LOCAL)/lib/mattermost.profile.i2p/bookmarks.html \
+		$(PREFIX)$(USR)$(LOCAL)/lib/$(MATTERMOST_PROFILE)/user.js \
+		$(PREFIX)$(USR)$(LOCAL)/lib/$(MATTERMOST_PROFILE)/bookmarks.html \
 		$(PREFIX)$(USR)$(LOCAL)/share/applications/mattermost-i2p.desktop \
 		$(PREFIX)$(USR)$(LOCAL)/share/applications/mattermost-i2p-proxy.desktop \
 		$(PREFIX)$(USR)$(LOCAL)/share/applications/mattermost-i2p-chromium.desktop \
 		$(PREFIX)$(USR)$(LOCAL)/share/applications/mattermost-i2p-firefox.desktop \
 		$(PREFIX)$(USR)$(LOCAL)/share/doc/assets/*.png
+
+clean:
+	rm -rf mattermost.profile.i2p.test
 
 ## Copyright (C) 2012 - 2018 ENCRYPTED SUPPORT LP <adrelanos@riseup.net>
 ## See the file COPYING for copying conditions.
