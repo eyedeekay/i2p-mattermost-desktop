@@ -19,7 +19,7 @@ firefox:
 	@echo "if [ ! -d ~/.mozilla/firefox/mattermost.i2p ]; then" | tee -a usr/bin/mattermost-firefox
 	@echo "  cp -rv /usr/lib/mattermost.profile.i2p ~/.mozilla/firefox/mattermost.i2p" | tee -a usr/bin/mattermost-firefox
 	@echo "fi" | tee -a usr/bin/mattermost-firefox
-	@echo "firefox --no-remote --profile ~/.mozilla/firefox/mattermost.i2p --private-window \$$MMC_HOST:\$$MMC_PORT" | tee -a usr/bin/mattermost-firefox
+	@echo "firefox --no-remote --profile ~/.mozilla/firefox/mattermost.i2p \$$MMC_HOST:\$$MMC_PORT" | tee -a usr/bin/mattermost-firefox
 	chmod +x usr/bin/mattermost-firefox
 
 ## It can be run in Mattermost Desktop:
@@ -50,6 +50,5 @@ desktop-proxy:
 	mkdir -p usr/bin
 	@echo "#! /usr/bin/env sh" | tee usr/bin/mattermost-i2p-proxy
 	@echo '. /etc/mattermost-i2p/mattermost-i2p.conf' | tee -a usr/bin/mattermost-i2p-proxy
-	#@echo "export no_proxy='127.0.0.1:8065'" | tee -a usr/bin/mattermost-i2p-proxy
 	@echo '/opt/Mattermost/mattermost-desktop --proxy-server="127.0.0.1:$$PROXY_PORT"' | tee -a usr/bin/mattermost-i2p-proxy
 	chmod +x usr/bin/mattermost-i2p-proxy

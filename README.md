@@ -24,7 +24,8 @@ and
         sudo make install
 
 if they have both [genmkfile](https://github.com/eyedeekay/genmkfile)
-and Mattermost's latest .deb release installed.
+and Mattermost's latest .deb release installed. Since it uses genmkfile, it will
+also readily checkinstall.
 
 i2p users have to configure their own tunnels for now. It's probably
 self-explanatory. but just in case, here's a step-by-step guide using the tunnel
