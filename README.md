@@ -1,12 +1,71 @@
 # i2p-mattermost-desktop
 
 Notes about configuring a desktop client for Mattermost to reliably work with an
-i2p client tunnel.
+i2p client tunnel. Currently WebSockets via Desktop are broken in this
+configuration because Mattermost needs to be contacted via WebSockets.
+Tentatively, the chromium-based one is most 'complete'
 
 ## What is Mattermost Desktop
 
  * An electron app
+  * has browser-like characteristics, like making remote requests, potentially
+   via scripts.
  * A browser app
+ * a third-party .deb
+ * Uses WebSockets
+
+## Configuration TL:DR
+
+i2pd users on Debian or Ubuntu-based distros could just run
+
+        make all
+
+and
+
+        sudo make install
+
+if they have both [genmkfile](https://github.com/eyedeekay/genmkfile)
+and Mattermost's latest .deb release installed.
+
+i2p users have to configure their own tunnels for now. It's probably
+self-explanatory. but just in case, here's a step-by-step guide using the tunnel
+wizard with pictures.
+
+**Step 1:** Open the local tunnel manager.
+
+![01-i2p.png](/usr/share/doc/assets/01-i2p.png)
+
+**Step 2:** Start the tunnel creation wizard.
+
+![02-i2p.png](/usr/share/doc/assets/02-i2p.png)
+
+**Step 3:** Select a client tunnel.
+
+![03-i2p.png](/usr/share/doc/assets/03-i2p.png)
+
+**Step 4:** Select the "Standard" tunnel type.
+
+![04-i2p.png](/usr/share/doc/assets/04-i2p.png)
+
+**Step 5:** Name it.
+
+![05-i2p.png](/usr/share/doc/assets/05-i2p.png)
+
+**Step 6:** Set the binding address.
+
+![06-i2p.png](/usr/share/doc/assets/06-i2p.png)
+
+**Step 7:** Set the tunnel destination.
+
+![07-i2p.png](/usr/share/doc/assets/07-i2p.png)
+
+**Step 8:** Optionally start the tunnel when your router starts.
+
+![08-i2p.png](/usr/share/doc/assets/08-i2p.png)
+
+**Step 9:** In the end, these settings seem to be successful.
+
+![09-i2p.png](/usr/share/doc/assets/09-i2p.png)
 
 ## Where can you run it over i2p
 
@@ -69,3 +128,4 @@ the client to the client tunnel.
          https_proxy="http://127.0.0.1:4444" \
          no_proxy="127.0.0.1:8065" \
          /opt/Mattermost/mattermost-desktop
+
