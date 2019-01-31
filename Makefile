@@ -17,7 +17,7 @@ USR := usr/
 LOCAL := local/
 
 
-echo: etc/privoxy/config
+echo: etc/privoxy/i2p-config
 	mkdir -p etc/i2pd/tunnels.conf.d/ etc/mattermost-i2p etc/privoxy
 	@echo '[MatterMost]' | tee etc/i2pd/tunnels.conf.d/mattermost.conf
 	@echo 'type = client' | tee -a etc/i2pd/tunnels.conf.d/mattermost.conf
@@ -37,10 +37,10 @@ echo: etc/privoxy/config
 	@echo "MMC_PORT=$(MMC_PORT)" | tee -a etc/mattermost-i2p/mattermost-i2p.conf
 	@echo "PROXY_PORT=$(PROXY_PORT)" | tee -a etc/mattermost-i2p/mattermost-i2p.conf
 
-etc/privoxy/config:
-	cat	/etc/privoxy/config | grep -v '#' | tee etc/privoxy/config
-	echo 'forward-socks5t / 127.0.0.1:9050 .' | tee -a etc/privoxy/config
-	echo 'forward .i2p 127.0.0.1:4444' | tee -a etc/privoxy/config
+etc/privoxy/i2p-config:
+	cat	/etc/privoxy/config | grep -v '#' | tee etc/privoxy/i2p-config
+	echo 'forward-socks5t / 127.0.0.1:9050 .' | tee -a etc/privoxy/i2p-config
+	echo 'forward .i2p 127.0.0.1:4444' | tee -a etc/privoxy/i2p-config
 
 #include ../local_conf.mk
 include ../test_conf.mk
