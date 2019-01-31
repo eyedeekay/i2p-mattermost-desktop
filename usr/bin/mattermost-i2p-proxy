@@ -1,4 +1,3 @@
 #! /usr/bin/env sh
-export http_proxy="http://127.0.0.1:$PROXY_PORT"
-export https_proxy="http://127.0.0.1:$PROXY_PORT"
-/opt/Mattermost/mattermost-desktop
+. /etc/mattermost-i2p/mattermost-i2p.conf
+/opt/Mattermost/mattermost-desktop --proxy-server="127.0.0.1:$PROXY_PORT"

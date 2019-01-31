@@ -41,10 +41,7 @@ desktop:
 	mkdir -p usr/bin
 	@echo "#! /usr/bin/env sh" | tee usr/bin/mattermost-i2p
 	@echo '. /etc/mattermost-i2p/mattermost-i2p.conf' | tee -a usr/bin/mattermost-i2p
-	@echo 'export http_proxy="http://127.0.0.1:$$PROXY_PORT"' | tee -a usr/bin/mattermost-i2p
-	@echo 'export https_proxy="http://127.0.0.1:$$PROXY_PORT"' | tee -a usr/bin/mattermost-i2p
-	@echo "export no_proxy=\$$MMC_HOST:\$$MMC_PORT" | tee -a usr/bin/mattermost-i2p
-	@echo '/opt/Mattermost/mattermost-desktop' | tee -a usr/bin/mattermost-i2p
+	@echo "/opt/Mattermost/mattermost-desktop --proxy-server=\"127.0.0.1:\$$PROXY_PORT\" --proxy-bypass-list=\"\$$MMC_HOST:\$$MMC_PORT\"" | tee -a usr/bin/mattermost-i2p
 	chmod +x usr/bin/mattermost-i2p
 
 ## Or via the proxy
@@ -52,7 +49,6 @@ desktop:
 desktop-proxy:
 	mkdir -p usr/bin
 	@echo "#! /usr/bin/env sh" | tee usr/bin/mattermost-i2p-proxy
-	@echo 'export http_proxy="http://127.0.0.1:$$PROXY_PORT"' | tee -a usr/bin/mattermost-i2p-proxy
-	@echo 'export https_proxy="http://127.0.0.1:$$PROXY_PORT"' | tee -a usr/bin/mattermost-i2p-proxy
-	@echo '/opt/Mattermost/mattermost-desktop' | tee -a usr/bin/mattermost-i2p-proxy
+	@echo '. /etc/mattermost-i2p/mattermost-i2p.conf' | tee -a usr/bin/mattermost-i2p-proxy
+	@echo '/opt/Mattermost/mattermost-desktop --proxy-server="127.0.0.1:$$PROXY_PORT"' | tee -a usr/bin/mattermost-i2p-proxy
 	chmod +x usr/bin/mattermost-i2p-proxy

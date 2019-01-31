@@ -76,14 +76,13 @@ You can run it in a browser over the HTTP proxy by visiting it's web interface.
   * This is the easiest way
   * But there are some reports of unreliability.
 
-You can run it in the desktop application, which honors the http\_proxy,
-https\_proxy, no\_proxy environment variables. This is also pretty easy, you
-just use the .b32.i2p address in place of the domain name and run it with a
-command like this:
+You can run it in the desktop application, which both accepts the same flags as
+Chromium browsers, and honors the http\_proxy, https\_proxy, no\_proxy
+environment variables. This is also pretty easy, you just use the .b32.i2p
+address in place of the domain name and run it with a command like this:
 
-         http_proxy="http://127.0.0.1:4444" \
-         https_proxy="http://127.0.0.1:4444" \
-         /opt/Mattermost/mattermost-desktop
+         /opt/Mattermost/mattermost-desktop \
+            --proxy-server="127.0.0.1:4444"
 
 ### Client Tunnel Based
 
@@ -96,7 +95,7 @@ local host.
     etc/i2pd/tunnels.conf.d
 
 Chromium lets you set --proxy-bypass-list down to the port, so for instance
-with the client tunnel running on 127.0.0.1:8065. So for instance, you can run
+with the client tunnel running on 127.0.0.1:8065, you can run
 
         chromium --incognito \
           --proxy-server="127.0.0.1:0" \
@@ -127,13 +126,11 @@ would work.
 ### Desktop
 
 You can do essentially the same thing with the desktop client and a tunnel. Just
-use the http\_proxy, https\_proxy, no\_proxy environment variables, then connect
-the client to the client tunnel.
+use the same flags as you would for Chromium-based browsers.
 
-         http_proxy="http://127.0.0.1:4444" \
-         https_proxy="http://127.0.0.1:4444" \
-         no_proxy="127.0.0.1:8065" \
-         /opt/Mattermost/mattermost-desktop
+         /opt/Mattermost/mattermost-desktop \
+            --proxy-server="127.0.0.1:4444" \
+            --proxy-bypass-list="127.0.0.1:8065"
 
 ### [MatterIRCD](https://github.com/42wim/matterircd)
 
