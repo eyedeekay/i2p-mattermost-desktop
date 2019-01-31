@@ -38,6 +38,7 @@ echo:
 	@echo "MMC_PORT=$(MMC_PORT)" | tee -a etc/mattermost-i2p/mattermost-i2p.conf
 	@echo "PROXY_PORT=$(PROXY_PORT)" | tee -a etc/mattermost-i2p/mattermost-i2p.conf
 	@echo "MATTERMOST_PROFILE=$(MATTERMOST_PROFILE)" | tee -a etc/mattermost-i2p/mattermost-i2p.conf
+	#@echo "USER_MATTERMOST_PROFILE='~/.mozilla/firefox/mattermost.i2p' | tee -a etc/mattermost-i2p/mattermost-i2p.conf
 
 include config.mk
 include launchers.mk
