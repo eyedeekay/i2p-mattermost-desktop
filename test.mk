@@ -8,7 +8,7 @@ chromium-test:
 
 firefox-test:
 	rm -rf ./mattermost.profile.i2p.test
-	cp -rv .$(MATTERMOST_PROFILE) ./mattermost.profile.i2p.test
+	cp -rv ./usr/lib/mattermost.profile.i2p ./mattermost.profile.i2p.test
 	firefox --no-remote --profile ./mattermost.profile.i2p.test --private-window "127.0.0.1:8065"
 
 ## Via a tunnel:

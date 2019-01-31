@@ -80,7 +80,7 @@ uninstall:
 		$(PREFIX)$(USR)$(LOCAL)/share/doc/assets/*.png
 
 clean:
-	rm -rf mattermost.profile.i2p.test
+	rm mattermost.profile.i2p.test
 
 ## Copyright (C) 2012 - 2018 ENCRYPTED SUPPORT LP <adrelanos@riseup.net>
 ## See the file COPYING for copying conditions.
