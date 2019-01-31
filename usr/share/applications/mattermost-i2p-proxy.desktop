@@ -2,6 +2,7 @@
 [Desktop Entry]
 Exec=mattermost-i2p-proxy %u
 Type=Application
+Icon=/opt/Mattermost/icon.svg
 Name=I2P Mattermost(Desktop via Proxy)
 GenericName=I2P Mattermost(Desktop via Proxy)
 Comment=I2P Mattermost(Desktop via Proxy)
