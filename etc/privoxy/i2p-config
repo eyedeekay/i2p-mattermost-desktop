@@ -21,5 +21,3 @@ tolerate-pipelining 1
 socket-timeout 300
 forward-socks5t / 127.0.0.1:9050 .
 forward .i2p 127.0.0.1:4444
-forward-socks5t / 127.0.0.1:9050 .
-forward .i2p 127.0.0.1:4444

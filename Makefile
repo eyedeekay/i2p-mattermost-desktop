@@ -4,8 +4,8 @@ MATTERMOST_LATEST=$(shell ./gh-latest.sh -u mattermost -r desktop | tr -d v)
 MATTERMOST_ARCH="amd64"
 MMC_HOST=127.0.0.1
 MMC_PORT=8065
-#PROXY_PORT=4444
-PROXY_PORT=8118
+PROXY_PORT=4444
+#PROXY_PORT=8118
 
 PREFIX := /
 VAR := var/
