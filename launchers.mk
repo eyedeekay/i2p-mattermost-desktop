@@ -16,7 +16,7 @@ chromium:
 firefox:
 	@echo "#! /usr/bin/env sh" | tee usr/bin/mattermost-firefox
 	@echo '. /etc/mattermost-i2p/mattermost-i2p.conf' | tee -a usr/bin/mattermost-firefox
-	@echo "if [ -d ~/.mozilla/firefox/mattermost.i2p ]; then" | tee -a usr/bin/mattermost-firefox
+	@echo "if [ ! -d ~/.mozilla/firefox/mattermost.i2p ]; then" | tee -a usr/bin/mattermost-firefox
 	@echo "  cp -rv /usr/lib/mattermost.profile.i2p ~/.mozilla/firefox/mattermost.i2p" | tee -a usr/bin/mattermost-firefox
 	@echo "fi" | tee -a usr/bin/mattermost-firefox
 	@echo "firefox --no-remote --profile ~/.mozilla/firefox/mattermost.i2p --private-window \$$MMC_HOST:\$$MMC_PORT" | tee -a usr/bin/mattermost-firefox
