@@ -141,5 +141,24 @@ the client to the client tunnel.
 and IRC that can be run locally. There's not much to it, you just point the
 matterircd client at the mattermost server, in this case, it's our client
 tunnel. Once that's connected, you should be able to use any old IRC client,
-although I've not quite got the hang of it yet.
+although I've not quite got the hang of it yet. This is the configuration I've
+used for matterircd.
 
+        ###############################
+        ##### GLOBAL SETTINGS #########
+        ###############################
+        Bind = "127.0.0.1:7667"
+        Debug = false
+        TLSBind = "127.0.0.1:7697"
+        TLSDir = "./etc/pki/tls/mattermost/"
+        ##################################
+        ##### MATTERMOST SETTINGS ########
+        ##################################
+        [mattermost]
+        DefaultServer = "127.0.0.1:8065"
+        DefaultTeam = "i2p"
+        Insecure = true
+        JoinInclude = ["#town-square"]
+        PartFake = true
+        Restrict = ["127.0.0.1:8065"]
+        SkipTLSVerify = true
