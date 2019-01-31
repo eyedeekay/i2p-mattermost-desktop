@@ -6,7 +6,7 @@ chromium:
 	@echo "#! /usr/bin/env sh" | tee usr/bin/mattermost-chromium
 	@echo '. /etc/mattermost-i2p/mattermost-i2p.conf' | tee -a usr/bin/mattermost-chromium
 	@echo 'chromium --incognito \' | tee -a usr/bin/mattermost-chromium
-	@echo '  --proxy-server="127.0.0.1:0" \' | tee -a usr/bin/mattermost-chromium
+	@echo "  --proxy-server=\"127.0.0.1:\$$PROXY_HOST\" \\" | tee -a usr/bin/mattermost-chromium
 	@echo "  --proxy-bypass-list=\$$MMC_HOST:\$$MMC_PORT \\" | tee -a usr/bin/mattermost-chromium
 	@echo "  \$$MMC_HOST:\$$MMC_PORT" | tee -a usr/bin/mattermost-chromium
 	chmod +x usr/bin/mattermost-chromium

@@ -14,10 +14,10 @@ firefox-test:
 ## Via a tunnel:
 
 mattermost-test:
-	http_proxy="http://127.0.0.1:4444" https_proxy="http://127.0.0.1:4444" no_proxy="127.0.0.1:8065" /opt/Mattermost/mattermost-desktop
+	/opt/Mattermost/mattermost-desktop --incognito --proxy-server="127.0.0.1:4444" --proxy-bypass-list="127.0.0.1:8065" "127.0.0.1:8065" "127.0.0.1:7070"
 
 ## Or via the proxy
 
 mattermost-proxy-test:
-	http_proxy="http://127.0.0.1:4444" https_proxy="http://127.0.0.1:4444" /opt/Mattermost/mattermost-desktop
+	/opt/Mattermost/mattermost-desktop --incognito --proxy-server="127.0.0.1:4444"
 

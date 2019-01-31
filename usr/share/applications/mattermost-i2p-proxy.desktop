@@ -1,0 +1,11 @@
+
+[Desktop Entry]
+Exec=mattermost-i2p-proxy %u
+Type=Application
+Name=I2P Mattermost(Desktop via Proxy)
+GenericName=I2P Mattermost(Desktop via Proxy)
+Comment=I2P Mattermost(Desktop via Proxy)
+Categories=Network;
+X-KDE-StartupNotify=false
+Keywords=browser;privacy;
+MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/vnd.mozilla.xul+xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;

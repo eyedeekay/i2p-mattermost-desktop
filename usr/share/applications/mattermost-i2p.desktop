@@ -1,0 +1,11 @@
+
+[Desktop Entry]
+Exec=mattermost-i2p %u
+Type=Application
+Name=I2P Mattermost(Desktop via Tunnel)
+GenericName=I2P Mattermost(Desktop via Tunnel)
+Comment=I2P Mattermost(Desktop via Tunnel)
+Categories=Network;
+X-KDE-StartupNotify=false
+Keywords=browser;privacy;
+MimeType=text/html;text/xml;application/xhtml+xml;application/xml;application/vnd.mozilla.xul+xml;application/rss+xml;application/rdf+xml;image/gif;image/jpeg;image/png;x-scheme-handler/http;x-scheme-handler/https;
