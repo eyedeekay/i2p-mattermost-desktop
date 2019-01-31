@@ -46,6 +46,7 @@ etc/privoxy/i2p-config:
 include ../test_conf.mk
 
 include launchers.mk
+include ircbridge.mk
 include test.mk
 
 setup:

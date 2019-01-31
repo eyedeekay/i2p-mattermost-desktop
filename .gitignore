@@ -3,3 +3,6 @@ mattermost-url
 gh-latest.sh
 firefox.profile.mattermost.test
 README.md.asc
+mattermost.profile.i2p
+etc/pki/tls/mattermost/key.pem
+etc/pki/tls/mattermost/cert.pem

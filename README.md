@@ -87,6 +87,8 @@ command like this:
 
 ### Client Tunnel Based
 
+### Chromium
+
 You can give it it's own client tunnel, then connect your browser to it on the
 local host.
 
@@ -107,6 +109,8 @@ router console will *not* be visible. Same for your CUPS Server and all that
 too. In this configuration, Chromium will use your i2p HTTP proxy for all
 requests not made to the Mattermost tunnel.
 
+### Firefox
+
 Firefox requires you to create a profile, and doesn't allow setting the proxy
 bypass down to the port, so it's more difficult to block requests to the
 localhost(This still isn't accomplished here). I've modified firefox.profile.i2p
@@ -120,6 +124,8 @@ if it were in $HOME/.mattermost.profile.i2p
 
 would work.
 
+### Desktop
+
 You can do essentially the same thing with the desktop client and a tunnel. Just
 use the http\_proxy, https\_proxy, no\_proxy environment variables, then connect
 the client to the client tunnel.
@@ -128,4 +134,12 @@ the client to the client tunnel.
          https_proxy="http://127.0.0.1:4444" \
          no_proxy="127.0.0.1:8065" \
          /opt/Mattermost/mattermost-desktop
+
+### [MatterIRCD](https://github.com/42wim/matterircd)
+
+[MatterIRCD](https://github.com/42wim/matterircd) is a bridge between mattermost
+and IRC that can be run locally. There's not much to it, you just point the
+matterircd client at the mattermost server, in this case, it's our client
+tunnel. Once that's connected, you should be able to use any old IRC client,
+although I've not quite got the hang of it yet.
 
