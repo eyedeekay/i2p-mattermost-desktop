@@ -57,8 +57,8 @@ install:
 	install -m755 usr/bin/mattermost-i2p-firefox $(PREFIX)$(USR)$(LOCAL)/bin/
 	install etc/mattermost-i2p/mattermost-i2p.conf $(PREFIX)$(ETC)/mattermost-i2p/
 	install etc/i2pd/tunnels.d/mattermost.conf $(PREFIX)$(ETC)/i2pd/tunnels.d/
-	install usr/lib/$(MATTERMOST_PROFILE)/user.js $(MATTERMOST_PROFILE)/
-	install usr/lib/$(MATTERMOST_PROFILE)/bookmarks.html $(MATTERMOST_PROFILE)/
+	install usr/lib/mattermost.profile.i2p/user.js $(MATTERMOST_PROFILE)/
+	install usr/lib/mattermost.profile.i2p/bookmarks.html $(MATTERMOST_PROFILE)/
 	install usr/share/applications/mattermost-i2p.desktop $(PREFIX)$(USR)$(LOCAL)/share/applications
 	install usr/share/applications/mattermost-i2p-proxy.desktop $(PREFIX)$(USR)$(LOCAL)/share/applications
 	install usr/share/applications/mattermost-i2p-chromium.desktop $(PREFIX)$(USR)$(LOCAL)/share/applications
