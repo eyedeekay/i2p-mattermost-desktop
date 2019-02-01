@@ -16,10 +16,10 @@ chromium:
 firefox:
 	@echo "#! /usr/bin/env sh" | tee usr/bin/mattermost-i2p-firefox
 	@echo '. /etc/mattermost-i2p/mattermost-i2p.conf' | tee -a usr/bin/mattermost-i2p-firefox
-	@echo "if [ ! -d ~/.mozilla/firefox/mattermost.i2p ]; then" | tee -a usr/bin/mattermost-i2p-firefox
-	@echo "  cp -rv \$$MATTERMOST_PROFILE ~/.mozilla/firefox/mattermost.i2p" | tee -a usr/bin/mattermost-i2p-firefox
+	@echo "if [ ! -d \$$USER_MATTERMOST_PROFILE ]; then" | tee -a usr/bin/mattermost-i2p-firefox
+	@echo "  cp -rv \$$MATTERMOST_PROFILE \$$USER_MATTERMOST_PROFILE" | tee -a usr/bin/mattermost-i2p-firefox
 	@echo "fi" | tee -a usr/bin/mattermost-i2p-firefox
-	@echo "firefox --no-remote --profile ~/.mozilla/firefox/mattermost.i2p \$$MMC_HOST:\$$MMC_PORT" | tee -a usr/bin/mattermost-i2p-firefox
+	@echo "firefox --no-remote --profile \$$USER_MATTERMOST_PROFILE \$$MMC_HOST:\$$MMC_PORT" | tee -a usr/bin/mattermost-i2p-firefox
 	chmod +x usr/bin/mattermost-i2p-firefox
 
 ## It can be run in Mattermost Desktop:
