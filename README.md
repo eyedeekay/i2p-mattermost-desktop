@@ -160,7 +160,9 @@ if it were in $HOME/.mattermost.profile.i2p
             --profile $HOME/.mattermost.profile.i2p \
             --private-window 127.0.0.1:8065
 
-would work.
+would work. This also excludes HTTPS everywhere and NoScript because they break
+Mattermost-over-i2p for now. Noscript will need to be disabled by default in
+general for Mattermost, since it's a web app.
 
 ### Desktop
 
