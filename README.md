@@ -15,6 +15,36 @@ the chromium-like flags --proxy-server --proxy-bypass-list.
 
 ## Configuration TL:DR
 
+### Windows
+
+#### Desktop
+
+First, install the Mattermost desktop client for Windows. When installing, make
+sure to create a shortcut to the Mattermost client on your desktop or somewhere
+else accessible.
+
+Next, copy-and-paste the Mattermost shortcut somewhere and re-name the copy
+"Mattermost I2P."
+
+Right click the "Mattermost I2P" shortcut you just created and open the
+"Properties" menu. Change Target from:
+
+        C:\Users\$YOURNAME\AppData\Local\mattermost\Mattermost.exe
+
+into
+
+        C:\Users\$YOURNAME\AppData\Local\mattermost\Mattermost.exe --proxy-server=127.0.0.1:4444
+
+Now you can use Mattermost-over-I2P by launching the "Mattermost I2P" shortcut.
+
+#### Web
+
+You can also use the I2P Browser for connecting to Mattermost over the eepWeb.
+In order to do this, you will need to enable scripts for the Mattermost domain
+and disable HTTPS Everywhere for the Mattermost domain.
+
+### Debian/Ubuntu, generally modern and apt-based.
+
 i2pd users on Debian or Ubuntu-based distros could just run
 
         make all
