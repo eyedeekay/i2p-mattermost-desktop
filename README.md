@@ -26,14 +26,24 @@ else accessible.
 Next, copy-and-paste the Mattermost shortcut somewhere and re-name the copy
 "Mattermost I2P."
 
+![00-copy.png](/usr/share/doc/assets/00-copy.png)
+
+![01-paste.png](/usr/share/doc/assets/01-paste.png)
+
+![02-rename.png](/usr/share/doc/assets/02-rename.png)
+
 Right click the "Mattermost I2P" shortcut you just created and open the
 "Properties" menu. Change Target from:
+
+![03-properties.png](/usr/share/doc/assets/03-properties.png)
 
         C:\Users\$YOURNAME\AppData\Local\mattermost\Mattermost.exe
 
 into
 
         C:\Users\$YOURNAME\AppData\Local\mattermost\Mattermost.exe --proxy-server=127.0.0.1:4444
+
+![04-proxy.png](/usr/share/doc/assets/04-proxy.png)
 
 Now you can use Mattermost-over-I2P by launching the "Mattermost I2P" shortcut.
 
