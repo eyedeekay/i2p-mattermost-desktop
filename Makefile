@@ -83,6 +83,10 @@ uninstall:
 clean:
 	rm -rf mattermost.profile.i2p.test
 
+index:
+	pandoc --highlight-style=tango -f gfm README.md -o - | tee index.html
+	pandoc --highlight-style=tango -f gfm README.md -t html5 -o README.pdf
+
 ## Copyright (C) 2012 - 2018 ENCRYPTED SUPPORT LP <adrelanos@riseup.net>
 ## See the file COPYING for copying conditions.
 
